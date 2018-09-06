@@ -2,8 +2,8 @@
 ## Introduction
 a light package for creating a loading view
 
-##Usage
-###init:
+## Usage
+### init:
 ```
  var fatzpreloader = new Fatzpreloader();
 ```
@@ -19,7 +19,7 @@ you can also send an optional setting object like:
 }
 ```
 
-###show:
+### show:
 ```
 fatzpreloader.show();
 ```
@@ -30,7 +30,7 @@ if you want to show another loading image in some case, you can pass an image ur
 fatzpreloader.show("https://xxx.gif");
 ```
 
-###hide:
+### hide:
 ```
 fatzpreloader.hide();
 ```
