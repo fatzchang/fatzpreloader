@@ -16,24 +16,22 @@ function Fatzpreloader(settings) {
                 }
                 var element = $("<div></div>", {
                     class: "fatz-preloader",
-                    style: "width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #aaa"
+                    style: "width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(200, 200, 200, 0.2)"
                 }),
                 inner = $("<div></div>", {
-                   style: "width: 100px; height: 100px; position: absolute; top: 50%; left: 50%; background-color: #444; transform: translateX(-50%) translateY(-50%);"  
+                   style: "width: 100px; height: 100px; position: absolute; top: 50%; left: 50%; background-color: transparent; transform: translateX(-50%) translateY(-50%);"  
                 }),
-                img = $(`<img src=${this.settings.path}>`)
-                img.attr('style', 'width: 100%')
+                img = $(`<img src=${this.settings.path}>`).attr('style', 'width: 100%');
+
                 inner.append(img);
                 element.append(inner);
                 this.element = element;
-                $('body').prepend(element);
+                $('body').prepend(this.element);
             }
             return this;
         },
-        show: function(path) {
-            if (path) {
-                this.setPath(path);
-            }
+        show: function(path) { //TODO: 倒數計時
+            this.element.find('img').attr('src', path ? path : this.settings.path);
             this.element.show();
             return this;
         },
