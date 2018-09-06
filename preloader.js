@@ -4,10 +4,10 @@ function Fatzpreloader(settings) {
     var app = {
         element: '',
         settings: {
-            imgPath: '',
+            path: '',
             width: '',
             height: '',
-            time: ''
+            time: 0
         },
         init: function (settings) {
             if (!this.element) {
@@ -15,9 +15,16 @@ function Fatzpreloader(settings) {
                     Object.assign(this.settings, settings)
                 }
                 var element = $("<div></div>", {
-                    class: "fatz-preloader"
-                });
-                element.append("<div></div>");
+                    class: "fatz-preloader",
+                    style: "width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #aaa"
+                }),
+                inner = $("<div></div>", {
+                   style: "width: 100px; height: 100px; position: absolute; top: 50%; left: 50%; background-color: #444; transform: translateX(-50%) translateY(-50%);"  
+                }),
+                img = $(`<img src=${this.settings.path}>`)
+                img.attr('style', 'width: 100%')
+                inner.append(img);
+                element.append(inner);
                 this.element = element;
                 $('body').prepend(element);
             }
@@ -35,7 +42,7 @@ function Fatzpreloader(settings) {
             return this;
         },
         setPath: function(path) {
-            this.settings.imgPath = path;
+            this.settings.path = path;
         }
     }
     app.init(settings);
