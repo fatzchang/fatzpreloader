@@ -8,7 +8,7 @@ a light package for creating a loading view
  var fatzpreloader = new Fatzpreloader();
 ```
 
-you can also send an optional setting object like:
+you can also pass an optional setting object like:
 
 ```
 {
@@ -24,7 +24,7 @@ you can also send an optional setting object like:
 fatzpreloader.show();
 ```
 
-if you want to show another loading image in some case, you can pass an image url as an optional parameter like:
+if you want to show another loading image in some cases, you can pass an image url as an optional parameter like:
 
 ```
 fatzpreloader.show("https://xxx.gif");
