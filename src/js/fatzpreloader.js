@@ -11,7 +11,6 @@ export default function Fatzpreloader (settings) {
             path: '',
             width: '',
             height: '',
-            time: 0
         },
         init: function(settings) {
             if (!this.element) {
@@ -33,9 +32,14 @@ export default function Fatzpreloader (settings) {
             }
             return this;
         },
-        show: function(path) { //TODO: 倒數計時
-            this.element.find('img').attr('src', path ? path : this.settings.path);
+        show: function(opt) {
+            this.element.find('img').attr('src', opt.path ? opt.path : this.settings.path);
             this.element.show();
+            if (typeof(opt.time) === "number") {
+                setTimeout(function() {
+                    app.hide()
+                }, opt.time);
+            }
             return this;
         },
         hide: function() {
