@@ -1,4 +1,4 @@
-module.exports = function Fatzpreloader(settings) {
+export default function Fatzpreloader (settings) {
     'use strict'
 
     if (typeof($) != "function") {
@@ -24,10 +24,7 @@ module.exports = function Fatzpreloader(settings) {
                     inner = $("<div></div>", {
                         class: "fatz-preloader-inner"
                     }),
-                    // img = $(`<img src=${this.settings.path}>`).attr('style', 'width: 100%');
-                    img = $(`<img src=${this.settings.path}>`, {
-                        class: "fatz-preloader-img"
-                    })
+                    img = $(`<img src=${this.settings.path}>`).addClass('fatz-preloader-img');
 
                 inner.append(img);
                 element.append(inner);
