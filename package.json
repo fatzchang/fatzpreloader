@@ -1,0 +1,29 @@
+{
+  "name": "fatzpreloader",
+  "version": "1.0.0",
+  "description": "light package to create a loading view",
+  "main": "dist/js/fatzpreloader.js",
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatzzhang/fatzpreloader.git"
+  },
+  "keywords": [
+    "loader"
+  ],
+  "author": "fatz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatzzhang/fatzpreloader/issues"
+  },
+  "homepage": "https://github.com/fatzzhang/fatzpreloader#readme",
+  "peerDependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
+  }
+}
